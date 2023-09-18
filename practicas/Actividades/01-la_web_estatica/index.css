@@ -23,8 +23,9 @@ body{
 /*inicio pagina principal*/
 .fondo1{
 	background: #8c3f23;
-	padding-right: 160px; /* Espacio de 20 píxeles en el lado derecho */
-    padding-left: 160px; /* Espacio de 30 píxeles en el lado izquierdo */
+	padding-top: 20px;
+	padding-left: 200px;
+	justify-content: center;
 	text-align: center;
 	height: 150px;
 
@@ -35,11 +36,6 @@ body{
 	float: left;
 	width: 100px;
 	height: 100px;
-}
-
-
-.fondo2{
-	background-color: #7A3E48;
 }
 
 .navegador a{
@@ -59,9 +55,6 @@ body{
 
 }
 
-.h2{
-    padding: 50px;
-}
 
 .fondo2{
 	background: #AC4421;
@@ -69,25 +62,30 @@ body{
 
 }
 
+.fondo3{
+	background:#da4915;
+	font-size: 25px;
+}
+
+.fondo4{
+	background:#3e1202;
+	font-size: 25px;
+}
+
 .pie{
 	color: white;
 }
 
-.fondo3{
-	background-image: url("fondo3.jpg");
-}
-
-
 .texto1{
 	font-size: 30px;
-	font-family: Cherione Normal;
+	font-family: Arial;
 	color: white;
 }
 
 
 .texto2{
 	font-size: 15px;
-	font-family: Cherione Normal;
+	font-family: Arial;
 	color: white;
 }
 
@@ -98,12 +96,25 @@ body{
 
 .container{
 	display: flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .container_img {
-    margin-left: auto;
-    margin-right: auto;
-    width: 200px;
+    margin:auto;
+	width: 150px;
     height: 100px;
     padding: 50px;
+}
+
+.container_info{
+	justify-content: center;
+	color:antiquewhite;
+	font-family: arial;
+	margin: 10px;
+}
+
+.precio{
+	margin-bottom:25px;
 }
