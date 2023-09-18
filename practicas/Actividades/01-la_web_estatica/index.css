@@ -1,109 +1,89 @@
-*{
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	text-decoration: none;
-	border: none;
-	outline: none;
-}/*normalización*/
+[33mcommit 10d7519b8dffe329e9100681cbee74c0317c88a4[m[33m ([m[1;36mHEAD -> [m[1;32mdev[m[33m, [m[1;31morigin/dev[m[33m)[m
+Author: RM <regina.avelinof@alumno.buap.mx>
+Date:   Mon Sep 18 04:41:48 2023 -0600
 
+    Hoja de estilos modificacion
 
-p{
-	font: bold 20px arial;
-}
+[33mcommit 6075d1eb5fda59fbdbd0cefb40de128608aed796[m
+Author: RM <regina.avelinof@alumno.buap.mx>
+Date:   Wed Sep 13 23:09:00 2023 -0600
 
-header, section, footer, aside, nav, article, figure, figcaption, hgroup,img{
-	display: block;
-} /*normalizacion*/
+    elementos index modificados
 
-body{
-	text-align: center;
-} /*normalizacion*/
+[33mcommit 6efcad4467d235b6919a7c071b7d2c228d1b99b3[m
+Author: RM <regina.avelinof@alumno.buap.mx>
+Date:   Wed Sep 13 22:40:05 2023 -0600
 
-/*inicio pagina principal*/
-.fondo1{
-	background: #8c3f23;
-	padding-right: 160px; /* Espacio de 20 píxeles en el lado derecho */
-    padding-left: 160px; /* Espacio de 30 píxeles en el lado izquierdo */
-	text-align: center;
-	height: 150px;
+    elementos index cargados
 
-}
+[33mcommit 0c7a295e0e1995ab8bfe10932e2fa6f5faf99518[m
+Author: RM <regina.avelinof@alumno.buap.mx>
+Date:   Wed Sep 13 22:39:16 2023 -0600
 
-.logo{
-	position: relative;
-	float: left;
-	width: 100px;
-	height: 100px;
-}
+    index modificado
 
+[33mcommit f68934478f0c12e990be32771ed8d85469f41a71[m
+Author: RM <regina.avelinof@alumno.buap.mx>
+Date:   Wed Sep 13 21:55:38 2023 -0600
 
-.fondo2{
-	background-color: #7A3E48;
-}
+    index cargado
 
-.navegador a{
-	color:white;
-	font: bold 30px Arial;
-}
+[33mcommit a2c2a7beadeb8709130649ef72c07bf131709aba[m
+Author: RM <regina.avelinof@alumno.buap.mx>
+Date:   Wed Sep 13 21:29:22 2023 -0600
 
-.seccion{
-	padding: 50px;
-}
+    wireframes cargados
 
-.encabezado{
-	color: white;
-	font: 30px Arial;
-    padding: 30px;
-	text-decoration: underline;
+[33mcommit cf2711a229a77eeae8d8a30c7295fb2b53a96082[m
+Author: RM <regina.avelinof@alumno.buap.mx>
+Date:   Tue Sep 5 12:56:59 2023 -0600
 
-}
+    Ejercicio 1 terminado
 
-.h2{
-    padding: 50px;
-}
+[33mcommit 5885135bd138ebd85d0f1ddb536d1ce5e044df6a[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: RM <regina.avelinof@alumno.buap.mx>
+Date:   Fri Aug 25 02:51:25 2023 -0600
 
-.fondo2{
-	background: #AC4421;
-	text-align: center;
+    archivos tecnologia 1 y 2 .txt frontend cargados
 
-}
+[33mcommit a5e82831c046f8fd40d75892db5f1b557070cedb[m
+Author: RM <regina.avelinof@alumno.buap.mx>
+Date:   Fri Aug 25 02:21:20 2023 -0600
 
-.pie{
-	color: white;
-}
+    imagen 02 cargado*
 
-.fondo3{
-	background-image: url("fondo3.jpg");
-}
+[33mcommit 55ab29f5daeee5b5ae5406b4cf10d9d2ba3c64fc[m
+Author: RM <regina.avelinof@alumno.buap.mx>
+Date:   Fri Aug 25 02:18:02 2023 -0600
 
+    imagen 01 cargado*
 
-.texto1{
-	font-size: 30px;
-	font-family: Cherione Normal;
-	color: white;
-}
+[33mcommit bbd274af3990c53bdf051e9265de57ca53f077ef[m
+Author: RM <regina.avelinof@alumno.buap.mx>
+Date:   Fri Aug 25 02:10:09 2023 -0600
 
+    imagen 01 cargado
 
-.texto2{
-	font-size: 15px;
-	font-family: Cherione Normal;
-	color: white;
-}
+[33mcommit 931a9c15e0ae80ee11ffe70aab76f6221b480d9f[m
+Author: RM <regina.avelinof@alumno.buap.mx>
+Date:   Thu Aug 24 12:59:31 2023 -0600
 
+    Archivos .txt cargados
 
-.container_encabezado {
-    text-align: center; /* Centra horizontalmente el contenido dentro del contenedor */
-}
+[33mcommit b49f3642040b98e1ecac415e5bb25496ac0b6abd[m
+Author: RM <regina.avelinof@alumno.buap.mx>
+Date:   Thu Aug 24 12:55:54 2023 -0600
 
-.container{
-	display: flex;
-}
+    Archivo la_web/estandares/README.md creado
 
-.container_img {
-    margin-left: auto;
-    margin-right: auto;
-    width: 200px;
-    height: 100px;
-    padding: 50px;
-}
+[33mcommit a1fbea1af9deb2662099f2a19d9d671eb1c9a644[m
+Author: RM <regina.avelinof@alumno.buap.mx>
+Date:   Thu Aug 24 12:51:31 2023 -0600
+
+    Archivo la_web/README.md creado
+
+[33mcommit 3fd26cc30ca90bc582a57a3f92a87d601d42be96[m
+Author: RM4862 <141953199+RM4862@users.noreply.github.com>
+Date:   Wed Aug 23 21:35:16 2023 -0600
+
+    Initial commit
