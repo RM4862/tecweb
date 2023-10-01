@@ -1,87 +1,78 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
 "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos_xhtml</title>
-</head>
-<body>
-<?php
-// Verificar si se ha proporcionado el parámetro "tope" en la solicitud GET
-if (isset($_GET['tope'])) {
-    $tope = $_GET['tope'];
+	<?php
+	if(isset($_GET['tope']))
+		$tope = $_GET['tope'];
 
-    // Validar que "tope" sea un número válido
-    if (is_numeric($tope)) {
-        // Crear una conexión a la base de datos
-        $link = new mysqli('localhost', 'root', '12345678a', 'marketzone');
+	if (!empty($tope))
+	{
+		/** SE CREA EL OBJETO DE CONEXION */
+		@$link = new mysqli('localhost', 'root', '12345678a', 'marketzone');	
 
-        // Verificar la conexión a la base de datos
-        if ($link->connect_errno) {
-            die('Falló la conexión: ' . $link->connect_error);
-        }
+		/** comprobar la conexión */
+		if ($link->connect_errno) 
+		{
+			die('Falló la conexión: '.$link->connect_error.'<br/>');
+			    /** NOTA: con @ se suprime el Warning para gestionar el error por medio de código */
+		}
 
-        // Escapar el valor de "tope" para prevenir inyección SQL
-        $tope = $link->real_escape_string($tope);
+		/** Crear una tabla que nos devuelve un conjunto de resultados de la base de datos*/
+		if ( $result = $link->query("SELECT * FROM productos WHERE unidades <= $tope") ) //localmente esta result
+		{   var_dump($result);
+			$row = $result->fetch_array(MYSQLI_ASSOC); ///arreglo row, fetch array es para sacar la consulta
+			/** útil para liberar memoria asociada a un resultado con demasiada información */
+			$result->free();
+		}
 
-        // Realizar una consulta SQL para seleccionar productos con unidades menores o iguales a "tope"
-        $query = "SELECT * FROM productos WHERE unidades <= $tope";
-        $result = $link->query($query);
+		$link->close();
+	}
+	?>
+	<head> <!--empieza xhtml-->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Producto</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	</head>
+	<body>
+		<h3>PRODUCTO</h3>
 
-        // Comprobar si se obtuvieron resultados
-        if ($result) {
-            // Iniciar la salida XHTML
-            header("Content-Type: application/xhtml+xml; charset=utf-8");
-            echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
-            echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">' . "\n";
-            echo '<html xmlns="http://www.w3.org/1999/xhtml">' . "\n";
-            echo '<head>' . "\n";
-            echo '<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />' . "\n";
-            echo '<title>Productos</title>' . "\n";
-            echo '</head>' . "\n";
-            echo '<body>' . "\n";
+		<br/>
+		
+		<?php if( isset($row) ) : ?> <!--si el arreglo tiene info se muestra-->
 
-            // Crear una tabla para mostrar los productos
-            echo '<table border="1">' . "\n";
-            echo '<tr><th>ID</th><th>Nombre</th><th>Unidades</th></tr>' . "\n";
+			<table class="table">
+				<thead class="thead-dark">
+					<tr>
+					<th scope="col">#</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Marca</th>
+					<th scope="col">Modelo</th>
+					<th scope="col">Precio</th>
+					<th scope="col">Unidades</th>
+					<th scope="col">Detalles</th>
+					<th scope="col">Imagen</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><?= $row['id'] ?></th>
+						<td><?= $row['nombre'] ?></td>
+						<td><?= $row['marca'] ?></td>
+						<td><?= $row['modelo'] ?></td>
+						<td><?= $row['precio'] ?></td>
+						<td><?= $row['unidades'] ?></td>
+						<td><?= utf8_encode($row['detalles']) ?></td>
+						<td><img src=<?= $row['imagen'] ?> ></td>
+					</tr>
+				</tbody>
+			</table>
 
-            // Recorrer los resultados de la consulta y mostrar cada producto
-            while ($row = $result->fetch_assoc()) {
-                echo '<tr>';
-                echo '<td>' . htmlspecialchars($row['id']) . '</td>';
-                echo '<td>' . htmlspecialchars($row['nombre']) . '</td>';
-                echo '<td>' . htmlspecialchars($row['unidades']) . '</td>';
-                echo '</tr>' . "\n";
-            }
+		<?php elseif(!empty($tope)) : ?>
 
-            echo '</table>' . "\n";
+			 <script>
+                alert('No hay tope de unidades');
+             </script>
 
-            // Cerrar la conexión a la base de datos
-            $link->close();
-
-            // Cerrar el documento XHTML
-            echo '</body>' . "\n";
-            echo '</html>' . "\n";
-        } else {
-            // Error en la consulta
-            echo 'Error en la consulta: ' . $link->error;
-        }
-    } else {
-        // "tope" no es un número válido
-        echo 'El parámetro "tope" debe ser un número válido.';
-    }
-} else {
-    // "tope" no se proporcionó en la solicitud GET
-    echo 'Parámetro "tope" no detectado...';
-}
-?>
-Este script realiza la conexión a la base de datos, ejecuta una consulta SQL para obtener los productos que cumplen con el criterio y los muestra en un documento XHTML. Asegúrate de ajustar la configuración de la conexión a tu base de datos y adaptarla según tus necesidades.
-
-
-
-
-
-
-</body>
+		<?php endif; ?>
+	</body>
 </html>

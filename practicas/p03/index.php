@@ -17,7 +17,7 @@
     $myvar;
     $var7;
     $_element1;
-    //$house*5; //invalida
+    $house=4*5; //invalida
 
     echo '<ul>';
     echo '<li>$_myvar es valida porque inicia con guion bajo.</li>';
@@ -25,6 +25,7 @@
     echo '<li>$myvar es valida porque inicia con guion bajo.</li>';
     echo '<li>$var7 es valida porque inicia con guion bajo.</li>';
     echo '<li>$_element1 es valida porque inicia con guion bajo.</li>';
+    echo $house;
     echo '</ul>';
 ?>
 </body>
