@@ -1,32 +1,79 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Practica 3</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Práctica 3</title>
 </head>
 <body>
-<h2> Ejercicio 1</h2><hr/>
-<p> Determina cual de las siguientes variables son validas y explica por que </p>
-<p>$_myvar, $_7var, myvar, $myvar, $var7, $_element1, $house*5</p>
-<?php
-    //AQUI VA MI CODIGO PHP 
-    $_myvar;
-    $_7var;
-    //myvar; //invalida
-    $myvar;
-    $var7;
-    $_element1;
-    $house=4*5; //invalida
+    <h2>Ejercicio 1</h2>
+    <p>Determina cuál de las siguientes variables son válidas y explica por qué:</p>
+    <p>$_myvar,  $_7var,  myvar,  $myvar,  $var7,  $_element1, $house*5</p>
+    <?php
+        //AQUI VA MI CÓDIGO PHP
+        $_myvar;
+        $_7var;
+        //myvar;       // Inválida
+        $myvar;
+        $var7;
+        $_element1;
+        //$house*5;     // Invalida
 
-    echo '<ul>';
-    echo '<li>$_myvar es valida porque inicia con guion bajo.</li>';
-    echo '<li>$_7var es valida porque inicia con guion bajo.</li>';
-    echo '<li>$myvar es valida porque inicia con guion bajo.</li>';
-    echo '<li>$var7 es valida porque inicia con guion bajo.</li>';
-    echo '<li>$_element1 es valida porque inicia con guion bajo.</li>';
-    echo $house;
-    echo '</ul>';
-?>
+        echo '<ul>';
+        echo '<li>$_myvar es válida porque inicia con guión bajo.</li>';
+        echo '<li>$_7var es válida porque inicia con guión bajo.</li>';
+        echo '<li>$myvar es válida porque inicia con una letra.</li>';
+        echo '<li>$var7 es válida porque inicia con una letra.</li>';
+        echo '<li>$_element1 es válida porque inicia con guión bajo.</li>';
+        echo '</ul>';
+    ?>
+    <hr>
+
+    <h2>Ejercicio 2</h2>
+        <p>Proporcionar los valores de $a, $b, $c como sigue:</p>
+        <p>$a = “ManejadorSQL”;</p>
+        <p>$b = 'MySQL';</p>
+        <p>$c = &$a;</p> <!--referencia de la variable a-->
+
+        <?php
+            $a = "ManejadorSQL";
+            $b = 'MySQL';
+            $c = &$a;
+        ?>
+        <p>a. Ahora muestra el contenido de cada variable</p>
+        <?php
+            echo '<ul>';
+            echo "<li>a tiene el valor: $a </li>";
+            echo "<li>b tiene el valor: $b</li>";
+            //echo "<li>".gettype($b). "</li>";  //echo "<li> gettype($b) </li>"; si se escribe asi el resultado será gettype(MySQL)
+            echo "<li>c tiene el valor: $c</li>";
+            echo '</ul>';
+        ?>
+
+    <p>b. Agrega al código actual las siguientes asignaciones:</p>
+    <p>$a = "PHP server";</p>
+    <p>$b = &$a;</p>
+    <?php
+        $a = "PHP server";
+        $b = &$a;
+    ?>
+    <p>c. Vuelve a mostrar el contenido de cada uno</p>
+    <?php
+            echo '<ul>';
+            echo "<li>a tiene el valor: $a </li>";
+            echo "<li>b tiene el valor: $b</li>";
+            echo "<li>c tiene el valor: $c</li>";
+            echo '</ul>';
+    ?>
+    <p>d. Describe y muestra en la página obtenida qué ocurrió en el segundo bloque de asignaciones</p>
+    <p>En la primera parte del código $a es definido con el valor string "Manejador SQL"; b con el valor string 'MySQL' y $c
+        hace referencia a $a, $c=&$a, por lo tanto contiene su mismo valor "ManejadorSQL".
+        <br>
+        La segunda parte del código  modifica el valor de $a con el string "PHP server"; el valor de $b con una referencia a $a; 
+        mientras que $c conserva su valor de referencia a $a, $c=&$a, pero como $a fue alterado $c considera esta modificacion y 
+        toma el valor "PHP server".
+        En resumen $b y c$ referencían al mismo valor de $a.
+    </p>
+
+
 </body>
 </html>
