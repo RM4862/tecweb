@@ -128,6 +128,22 @@
             print_r($z);
 
     ?>
+    <hr>
+    <h2>Ejercicio 4</h2>
+    <p>
+        Lee y muestra los valores de las variables del ejercicio anterior, pero ahora con la ayuda de
+        la matriz $GLOBALS o del modificador global de PHP.
+    </p>
+    <?php
+        echo '$a en el ámbito global: ' . $GLOBALS['a'] . "<br>";
+        global $z;
+        foreach ($z as $contenido) {
+            echo '$z en el ambito global es: '. $contenido . '<br>';
+        }
+        echo '$b en el ámbito global: ' . $GLOBALS['b'] . "<br>";
+        echo '$c en el ámbito global: ' . $GLOBALS['c'] . "<br>";
+        
+    ?>
 
 
 </body>
