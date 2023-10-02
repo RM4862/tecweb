@@ -113,7 +113,7 @@
             echo "<br>";
             $b = "5a version de PHP";
             echo "b tiene el valor: $b <br>";
-            $c = $b*10;
+            @$c = $b*10;
             echo "c tiene el valor: $c <br>"; 
             $a .= $b;
             echo "a concatenado con b tiene el valor: ";
@@ -126,24 +126,60 @@
             $z[0] = "MySQL";
             echo "z[0] tiene el valor:";
             print_r($z);
-
+            echo "<hr>";
     ?>
-    <hr>
     <h2>Ejercicio 4</h2>
     <p>
         Lee y muestra los valores de las variables del ejercicio anterior, pero ahora con la ayuda de
         la matriz $GLOBALS o del modificador global de PHP.
     </p>
     <?php
-        echo '$a en el ámbito global: ' . $GLOBALS['a'] . "<br>";
-        global $z;
-        foreach ($z as $contenido) {
-            echo '$z en el ambito global es: '. $contenido . '<br>';
-        }
-        echo '$b en el ámbito global: ' . $GLOBALS['b'] . "<br>";
-        echo '$c en el ámbito global: ' . $GLOBALS['c'] . "<br>";
-        
+        global $a, $z, $b, $c; // Declarar todas las variables como globales
+        $a = "PHP5";
+        echo "1.-"; var_dump($a); echo "<br>";
+        $z = array();
+        $z[] = &$a;
+        echo "2.-"; var_dump($z); echo "<br>";
+        $b = "5a version de PHP";
+        echo "3.-"; var_dump($b); echo "<br>";
+        @$c = $b * 10;
+        echo "4.-"; var_dump($c); echo "<br>";
+        $a .= $b;
+        echo "5.-"; var_dump($a); echo "<br>";
+        $b *= $c;
+        echo "6.-"; var_dump($b); echo "<br>";
+        $z[0] = "MySQL";
+        echo "7.-"; var_dump($z); echo "<br>";
     ?>
+
+
+    <h2>Ejercicio 5</h2>
+    <p>Dar el valor de las variables $a, $b, $c al final del siguiente script:
+        <br>
+        $a = “7 personas”;
+        <br>
+        $b = (integer) $a;
+        <br>
+        $a = “9E3”;
+        <br>
+        $c = (double) $a;
+    </p>
+    <?php
+        $a = "7 personas";
+        $b = (integer) $a;
+        $a = "9E32"; //9 
+        $c = (double) $a;
+        echo "El valor de a al final es: $a ";
+        echo "<br>";
+        echo "El valor de b al final es: $b";
+        echo "<br>";
+        echo "El valor de a al final es: $a";
+        echo "<br>";
+        echo "El valor de c al final es: $c";
+        echo "<br>";
+    ?>
+
+    
 
 
 </body>
