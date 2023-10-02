@@ -29,10 +29,14 @@
     <hr>
 
     <h2>Ejercicio 2</h2>
-        <p>Proporcionar los valores de $a, $b, $c como sigue:</p>
-        <p>$a = “ManejadorSQL”;</p>
-        <p>$b = 'MySQL';</p>
-        <p>$c = &$a;</p> <!--referencia de la variable a-->
+        <p>Proporcionar los valores de $a, $b, $c como sigue:
+            <br>
+            $a = “ManejadorSQL”;
+            <br>
+            $b = 'MySQL';
+            <br>
+            $c = &$a; <!--referencia de la variable a-->
+        </p>
 
         <?php
             $a = "ManejadorSQL";
@@ -49,9 +53,12 @@
             echo '</ul>';
         ?>
 
-    <p>b. Agrega al código actual las siguientes asignaciones:</p>
-    <p>$a = "PHP server";</p>
-    <p>$b = &$a;</p>
+    <p>b. Agrega al código actual las siguientes asignaciones:
+        <br>
+        $a = "PHP server";
+        <br>
+        $b = &$a; 
+    </p>
     <?php
         $a = "PHP server";
         $b = &$a;
@@ -64,8 +71,9 @@
             echo "<li>c tiene el valor: $c</li>";
             echo '</ul>';
     ?>
-    <p>d. Describe y muestra en la página obtenida qué ocurrió en el segundo bloque de asignaciones</p>
-    <p>En la primera parte del código $a es definido con el valor string "Manejador SQL"; b con el valor string 'MySQL' y $c
+    <p>d. Describe y muestra en la página obtenida qué ocurrió en el segundo bloque de asignaciones
+        <br>
+        En la primera parte del código $a es definido con el valor string "Manejador SQL"; b con el valor string 'MySQL' y $c
         hace referencia a $a, $c=&$a, por lo tanto contiene su mismo valor "ManejadorSQL".
         <br>
         La segunda parte del código  modifica el valor de $a con el string "PHP server"; el valor de $b con una referencia a $a; 
@@ -73,6 +81,53 @@
         toma el valor "PHP server".
         En resumen $b y c$ referencían al mismo valor de $a.
     </p>
+    <hr>
+    <h2>Ejercicio 3</h2>
+    <p>
+        Muestra el contenido de cada variable inmediatamente después de cada asignación,
+        verificar la evolución del tipo de estas variables (imprime todos los componentes 
+        de los arreglos):
+        <br>
+        $a = "PHP5";
+        <br>
+        $z[] = &$a;
+        <br>
+        $b = “5a version de PHP”;
+        <br>
+        $c = $b*10;
+        <br>
+        $a .= $b; <!--concatenacion de $a con $b-->
+        <br>
+        $b *= $c;
+        <br>
+        $z[0] = “MySQL”;
+    </p>
+
+    <?php
+           echo "Los valores asignados son: <br>";
+           $a = "PHP5";
+            echo "a tiene el valor: $a <br>";
+            $z[] = &$a;
+            echo "z[] tiene el valor: ";
+            print_r($z);
+            echo "<br>";
+            $b = "5a version de PHP";
+            echo "b tiene el valor: $b <br>";
+            $c = $b*10;
+            echo "c tiene el valor: $c <br>"; 
+            $a .= $b;
+            echo "a concatenado con b tiene el valor: ";
+            print_r($a);
+            $b *= $c;
+            echo"<br>";
+            echo "b tiene el valor: ";
+             print_r($b);
+             echo"<br>";
+            $z[0] = "MySQL";
+            echo "z[0] tiene el valor:";
+            print_r($z);
+
+    ?>
 
 
 </body>
