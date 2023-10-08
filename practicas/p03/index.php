@@ -151,7 +151,7 @@
         $z[0] = "MySQL";
         echo "7.-"; var_dump($z); echo "<br>";
     ?>
-
+    <hr>
 
     <h2>Ejercicio 5</h2>
     <p>Dar el valor de las variables $a, $b, $c al final del siguiente script:
@@ -178,8 +178,62 @@
         echo "El valor de c al final es: $c";
         echo "<br>";
     ?>
-
-    
+    <hr>
+    <h2>Ejercicio 6</h2>
+    <p>Dar y comprobar el valor booleano de las variables $a, $b, $c, $d, $e y $f y muéstralas usando la función
+        var_dump(datos). Después investiga una función de PHP que permita transformar el valor booleano de $c y $e
+        en uno que se pueda mostrar con un echo:
+        <br>
+        $a = “0”;
+        <br>
+        $b = “TRUE”;
+        <br>
+        $c = FALSE;
+        <br>
+        $d = ($a OR $b);
+        <br>
+        $e = ($a AND $c);
+        <br>
+        $f = ($a XOR $b);
+        <br>
+    </p>
+    <?php
+    $a = "0";
+    $b = "TRUE";
+    $c = FALSE;
+    $d = ($a OR $b);
+    $e = ($a AND $c);
+    $f = ($a XOR $b);
+    $valores=array($a,$b,$c,$d,$e,$f);
+    echo "Valores de las variables con var_dump";
+    echo "<br>";
+    var_dump($valores); 
+    echo"<br>";
+    $booleanToText = function ($value) { ///funcion para transformar el valor booleano en un valor que se puede mostrar con echo
+        return $value ? 'TRUE' : 'FALSE';
+    };
+    echo "\$c: " . $booleanToText($c) . "<br>";
+    echo "\$e: " . $booleanToText($e) . "<br>";
+    ?>
+    <hr>
+    <h2>Ejercicio 7</h2>
+        <p>Usando la variable predefinida $_SERVER, determina lo siguiente:
+        <br>
+        a. La versión de Apache y PHP,
+        <br>
+        b. El nombre del sistema operativo (servidor),
+        <br>
+        c. El idioma del navegador (cliente). </p>
+        <?php
+        $apacheVersion = $_SERVER['SERVER_SOFTWARE'];
+        $phpVersion = phpversion();
+        $serverOs = php_uname('s');
+        $clientLanguage = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+        echo "Versión de Apache: $apacheVersion <br>";
+        echo "Versión de PHP: $phpVersion <br>";
+        echo "Nombre del sistema operativo del servidor: $serverOs <br>";
+        echo "Idioma del navegador del cliente: $clientLanguage <br>";
+        ?>
 
 
 </body>
