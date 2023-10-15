@@ -54,7 +54,7 @@
         <tbody>
             <tr>
 			<?php 
-				if (isset($row) /*&& is_array($row)*/) {
+				if (isset($row)) {
 					foreach ($row as $registro) {
 						echo '<tr>';
 						echo '<td>' . $registro['id'] . '</td>';
@@ -68,7 +68,7 @@
 						echo '</tr>';
 					}
 				} else {
-					// si $row no tiene valores o no tiene información dentro del arreglo
+					// si $row no tiene valores
 					echo '<tr><td colspan="8">No se encontraron registros.</td></tr>';
 				}
 			?> 
