@@ -26,15 +26,16 @@
         }
 
         /** Crear una tabla que no devuelve un conjunto de resultados si es que esta el id*/
-        if ( $result = $link->query("SELECT * FROM productos WHERE unidades <= $tope") ) 
+        if ( $result = $link->query("SELECT * FROM productos WHERE unidades <= $tope") ) ///CAMBIO: se seleccionan los productos donde unidades<=tope
         {
-            $row = $result->fetch_all(MYSQLI_ASSOC);
+            $row = $result->fetch_all(MYSQLI_ASSOC); /* En esta línea, se utiliza el método fetch_all del objeto $result para recuperar 
+                                                        todos los resultados de la consulta en forma de un arreglo asociativo (MYSQLI_ASSOC). */
             
-            $result->free();
+            $result->free(); ///se libera memoria
         }
 
-        $link->close();
-    }
+        $link->close(); ///Finaliza la conexión
+    } ///parte del metodo get_productos.php
 ?>
 
 <body>
@@ -54,7 +55,7 @@
         <tbody>
             <tr>
 			<?php 
-				if (isset($row)) {
+				if (isset($row)) { ///row obtiene datos en la línea 31, si encuentra productos los mostrara con el foreach
 					foreach ($row as $registro) {
 						echo '<tr>';
 						echo '<td>' . $registro['id'] . '</td>';
