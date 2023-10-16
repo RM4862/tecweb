@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
 	<?php
 	if(isset($_GET['id']))
-		$id = $_GET['id'];
+		$id = $_GET['id']; ///se inicializa la variable
 
 	if (!empty($id))
 	{
