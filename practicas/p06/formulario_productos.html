@@ -1,0 +1,55 @@
+<!DOCTYPE html >
+   <html>
+     <head>
+       <meta charset="utf-8" >
+       <title>Formulario de registro de productos</title>
+       <style type="text/css">
+         ol, ul { 
+         list-style-type: none;
+         }
+       </style>
+     </head>
+   
+     <body>
+       <h1>Registro de Productos</h1>
+   
+       <form id="formulario" action="http://localhost:100/tecnologiasweb/practicas/p06/set_producto_v2.php" method="post">
+   
+       <h2>Información de Productos</h2>
+   
+         <fieldset>
+           <legend>Informacion</legend>
+   
+           <ul>
+             <form action="http://localhost:100/tecnologiasweb/practicas/set_producto_v2.php" method="post">
+               <label for="nombre">Nombre:</label>
+               <input type="text" id="nombre" name="nombre" placeholder="Solo 99 caracteres" required><br>
+       
+               <label for="marca">Marca:</label>
+               <input type="text" id="marca" name="marca" placeholder="Solo 25 caracteres" required><br>
+       
+               <label for="modelo">Modelo:</label>
+               <input type="text" id="modelo" name="modelo" placeholder="Solo 25 caracteres" required><br>
+       
+               <label for="precio">Precio:</label>
+               <input type="number" id="precio" name="precio" step="0.01" required><br>
+       
+               <label for="detalles">Detalles:</label>
+               <textarea id="detalles" name="detalles" rows="4" cols="50" placeholder="Solo 250 caracteres"></textarea><br>
+       
+               <label for="unidades">Unidades:</label>
+               <input type="number" id="unidades" name="unidades" required min="0"><br>
+       
+               <label for="urlImagen">URL de la Imagen:</label>
+               <input type="url" id="urlImagen" name="urlImagen" required><br>
+       
+           </ul>
+         </fieldset>
+         <p>
+           <input type="submit" value="Registrar mis productos">
+           <input type="reset">
+         </p>
+   
+       </form>
+     </body>
+   </html>
