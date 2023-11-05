@@ -19,9 +19,8 @@ if ($link->connect_errno)
 
 /** Crear una tabla que no devuelve un conjunto de resultados */
 $sql = "INSERT INTO productos VALUES (null, '{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$imagen}')";
-if ( $link->query($sql) ) /*Se ejecuta la consulta SQL en la base de datos utilizando el método $link->query($sql). 
-Si la consulta se ejecuta con éxito (es decir, si el producto se inserta correctamente en la tabla), se muestra un mensaje que 
-indica el ID del producto insertado. Si la consulta SQL no se ejecuta correctamente, se muestra un mensaje de error.*/
+if ( $link->query($sql) ) 
+{
     echo 'Producto insertado con ID: '.$link->insert_id;
 }
 else
