@@ -7,7 +7,6 @@ $data = array();
 // SE VERIFICA HABER RECIBIDO EL TEXTO DE BÚSQUEDA
 if (isset($_POST['searchText'])) {
     $searchText = $_POST['searchText'];
-
     //LA CONSULTA MODIFICADA
     if ($result = $conexion->query("SELECT * FROM productos WHERE 
         nombre LIKE '%{$searchText}%' OR
