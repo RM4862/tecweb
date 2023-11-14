@@ -1,80 +1,45 @@
 <CatalogoVOD>
-    <cuenta>
-        <correo direccion="regina.avelinof@alumno.buap.mx"></correo>
+    <cuenta correo = "regina.avelinof@alumno.buap.mx"></cuenta>
         <perfiles>
             <perfil usuario= "Regina" idioma= "Español" ></perfil>
             <perfil usuario= "Paula" idioma= "Frances" ></perfil>
         </perfiles>
-    </cuenta>
     <contenido>
         <peliculas>
-            <genero >
-                <nombre>Terror</nombre>
-                    <titulo>
-                        <nombre>La bruja</nombre>
-                        <duracion>2:00:00 hrs</duracion>
-
-                        <nombre>Veneno para las hadas</nombre>
-                        <duracion>2:30:00 hrs</duracion>
-
-                        <nombre>Saw</nombre>
-                        <duracion>3:00:00 hrs</duracion>
-
-                        <nombre>Huye</nombre>
-                        <duracion>2:20:00 hrs
-                        </duracion>
-                    </titulo>
-
-                <nombre>Animación</nombre>
-                    <titulo>
-                        <nombre>Pinocho</nombre>
-                        <duracion>2:50:00 hrs</duracion>
-
-                        <nombre>Coraline</nombre>
-                        <duracion>1:30:00 hrs</duracion>
-
-                        <nombre>Encanto</nombre>
-                        <duracion>1:20:00 hrs</duracion>
-
-                        <nombre>Frozen</nombre>
-                        <duracion>1:23:00 hrs</duracion>
-                    </titulo>
-            </genero>
+            <genero nombre="Terror"></genero>
+                <titulo>
+                    <nombre duracion = "02:50:00 hrs" >La bruja</nombre>
+                    <nombre duracion = "01:30:00 hrs" >El conjuro</nombre>
+                    <nombre duracion = "01:20:00 hrs" >Saw</nombre>
+                    <nombre duracion = "01:23:00 hrs" >Huye</nombre>
+                </titulo>
+                
+            <genero nombre = "Animación"></genero>
+                <titulo>
+                    <nombre duracion = "02:50:00 hrs" >Pinocho</nombre>
+                    <nombre duracion = "01:30:00 hrs" >Coraline</nombre>
+                    <nombre duracion = "01:20:00 hrs" >Encanto</nombre>
+                    <nombre duracion = "01:23:00 hrs" >Frozen</nombre>
+                </titulo>
         </peliculas>
 
         <programas>
-            <genero>
+            <genero nombre = "Sitcom"></genero>
                 <nombre>Sitcom</nombre>
                     <titulo>
-                        <nombre>La niñera</nombre>
-                        <duracion>5 temporadas</duracion>
-
-                        <nombre>ICarly</nombre>
-                        <duracion>3 temporadas</duracion>
-
-                        <nombre>Victorious</nombre>
-                        <duracion>2 temporadas</duracion>
-
-                        <nombre>Drake y Josh</nombre>
-                        <duracion>4 temporadas</duracion>
+                        <nombre duracion = "5 temporadas" >La niñera</nombre>
+                        <nombre duracion = "3 temporadas" >ICarly</nombre>
+                        <nombre duracion = "2 temporadas" >Victorious</nombre>
+                        <nombre duracion = "4 temporadas" >Drake y Josh</nombre>
                     </titulo>
 
-
-                <nombre>Animacion</nombre>
+                <genero nombre = "Animación"></genero>
                     <titulo>
-                        <nombre>Hora de aventura</nombre>
-                        <duracion>10 temporadas</duracion>
-
-                        <nombre>Steven universe</nombre>
-                        <duracion>8 temporadas</duracion>
-
-                        <nombre>Ladybug</nombre>
-                        <duracion>5 temporadas</duracion>
-
-                        <nombre>Bob esponja</nombre>
-                        <duracion>25 temporadas</duracion>
+                        <nombre duracion = "10 temporadas" >Hora de aventura</nombre>
+                        <nombre duracion = "8 temporadas" >Steven Universe</nombre>
+                        <nombre duracion = "5 temporadas" >Ladybug</nombre>
+                        <nombre duracion = "25 temporadas" >Bob esponja</nombre>
                     </titulo>
-            </genero>
         </programas>
     </contenido>
 </CatalogoVOD>
