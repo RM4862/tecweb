@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href=".">ContentApp</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto"></ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" name="search" id="search" type="search" placeholder="ID,tipo, región, género o título." aria-label="Search">
+        <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
+      </form>
+    </div>
+  </nav>
+  <meta charset="UTF-8">
+  <title>ContentApp</title>
+
+  <link rel="stylesheet" href="https://bootswatch.com/4/superhero/bootstrap.min.css">
+</head>
+<body>
+
+<!-- BARRA DE NAVEGACIÓN -->
+<div class="container">
+    <div class="row p-4">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <!-- FORMULARIO PARA AGREGAR O MODIFICAR CONTENIDO -->
+                    <form id="content-form">
+                        <div class="form-group">
+                            <label for="titulo">Título de contenido:</label>
+                            <input class="form-control" type="text" id="titulo" name="titulo" placeholder="Título de contenido">
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo">Tipo:</label>
+                            <select class="form-control" id="tipo" name="tipo">
+                                <option value="Película">Película</option>
+                                <option value="Serie">Serie</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="region">Región:</label>
+                            <input class="form-control" type="text" id="region" name="region" placeholder="Región">
+                        </div>
+                        <div class="form-group">
+                            <label for="genero">Género:</label>
+                            <input class="form-control" type="text" id="genero" name="genero" placeholder="Género">
+                        </div>
+                        <div class="form-group">
+                            <label for="duracion">Duración:</label>
+                            <input class="form-control" type="text" id="duracion" name="duracion" placeholder="Duración">
+                        </div>
+                        <input type="hidden" id="contentId">
+                        <button class="btn btn-primary btn-block text-center" type="submit">
+                            Agregar/Modificar Contenido
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="error-message" class="alert alert-danger alert-sm py-2" style="display: none; max-height: 40px; overflow: hidden;"></div>
+
+        <!-- TABLA -->
+        <div class="col-md-7">
+            <div class="card my-4" id="content-result">
+                <div class="card-body">
+                    <!-- RESULTADO -->
+                    <ul id="container"></ul>
+                </div>
+            </div>
+
+            <table class="table table-bordered table-sm">
+                <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Título</td>
+                    <td>Descripción</td>
+                </tr>
+                </thead>
+                <tbody id="contents"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<!-- Lógica del Frontend -->
+<script src="app.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</body>
+</html>

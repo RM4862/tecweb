@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cinefanatico SYSTEM "cinefanatico.dtd">
+<cinefanatico>
+    <tarjeta noserie="1234567891234567" visitas="4" puntos="380">
+        <nombre>Enrique Guzmán</nombre>
+        <correo>en456g@gmail.com</correo>
+    </tarjeta>
+</cinefanatico>

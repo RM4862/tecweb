@@ -1,0 +1,9 @@
+
+    <spotify xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="spotify.xsd">
+        <Cuenta id="1" plan="premium" fechaIni="2022-02-01" fechaFin="2023-02-01">
+            <nombre>John Wick</nombre>
+            <correo>john011@gmail.com</correo>
+            <telefono tipo="movil">000-123-4567</telefono>
+        </Cuenta>
+    </spotify>
+        

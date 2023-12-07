@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalogoVOD SYSTEM "serviciovod.dtd">
+
+<catalogoVOD>
+    <cuenta correo = "correo@gmail.com">
+        <perfiles>
+            <perfil usuario = "Usuario_1" idioma = "Español"/>
+            <perfil usuario = "Usuario_2" idioma = "Español"/>
+        </perfiles>
+    </cuenta>
+    
+    <contenido>
+        <peliculas>
+            <genero nombre = "Terror">
+                <titulo duracion="1h 5m">Host</titulo>
+                <titulo duracion="1h 51m">Maligno</titulo>
+                <titulo duracion="2h 15m">IT</titulo>
+                <titulo duracion="1h 43m">La noche del demonio</titulo>
+                <titulo duracion="0h">
+                    &lt;video id="11"&gt;&amp;lt;&lt;/video&gt;
+                </titulo> 
+            </genero>
+            <genero nombre = "Romance">
+                <titulo duracion="2h 5m">El poder del perro</titulo>
+                <titulo duracion="1h 54m">El tiempo contigo</titulo>
+                <titulo duracion="1h 52m">Your name</titulo>
+                <titulo duracion="1h 50m">Yo antes de ti</titulo>
+                <titulo duracion="0h">
+                    <![CDATA[<video id="11">&lt;</video>]]>
+                </titulo>
+            </genero>
+        </peliculas>
+        
+        <programas>
+            <genero nombre = "Comedia">
+                <titulo duracion="13 temporadas">Bob Esponja</titulo>
+                <titulo duracion="33 temporadas">Los Simpson</titulo> 
+                <titulo duracion="20 temporadas">Padre de Familia</titulo> 
+                <titulo duracion="4 temporadas">Escandalosos</titulo>                 
+            </genero>
+            <genero nombre = "Ciencia Ficcion">                
+                <titulo duracion="5 temporadas">Black Mirror</titulo>
+                <titulo duracion="3 temporadas">Dark</titulo>
+                <titulo duracion="3 temporadas">Viajeros</titulo>
+                <titulo duracion="3 temporadas">Star Trek</titulo>                
+            </genero>
+        </programas>
+    </contenido>
+    
+</catalogoVOD>

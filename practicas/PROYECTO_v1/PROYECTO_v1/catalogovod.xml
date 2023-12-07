@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CatalogoVOD Version="1.0"
+    xmlns="http://starfire.com/vod"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://starfire.com/vod serviciovod.xsd">
+
+    <cuenta correo="fulanitolopez@alumno.buap.mx">
+        <perfiles>
+            <perfil usuario="Fulanito1" idioma="Español"/>
+            <perfil usuario="Fulanito2" idioma="Frances"/>
+        </perfiles>
+    </cuenta>
+
+    <contenido>
+        <peliculas region="USA">
+            <genero nombre="Accion">
+                <titulo duracion="189">Jhon Wick</titulo>
+                <titulo duracion="127">Transformers</titulo>
+            </genero>
+            <genero nombre="Animacion">
+                <titulo duracion="80">Shrek</titulo>
+                <titulo duracion="102">Frozen</titulo>
+            </genero>
+        </peliculas>
+
+        <series region="USA">
+            <genero nombre="Drama Criminal">
+                <titulo duracion="154">Elementary</titulo>
+                <titulo duracion="173">Castle</titulo>
+            </genero>
+            <genero nombre="Drama">
+                <titulo duracion="115">Yellowstone</titulo>
+                <titulo duracion="126">Anatomia segun Grey</titulo>
+            </genero>
+        </series>
+    </contenido>
+</CatalogoVOD>
